@@ -1,8 +1,9 @@
+using TicTacToe.Scripts.AIs;
+using TicTacToe.Scripts.Core;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-namespace TicTacToe.Scripts
+namespace TicTacToe.Scripts.Player
 {
     public class AIPlayer : MonoBehaviour, IPlayer {
         [FormerlySerializedAs("_symbol")] [SerializeField] private char symbol;
@@ -18,11 +19,6 @@ namespace TicTacToe.Scripts
 
         public char GetSymbol() {
             return symbol;
-        }
-
-        public bool IsTurn()
-        {
-            return true;
         }
         
     }

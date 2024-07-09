@@ -1,19 +1,17 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
-namespace TicTacToe.Scripts
+namespace TicTacToe.Scripts.Core
 {
     /// <summary>
-    /// Responsible for making move on the board
-    /// Is logic behind the board
+    /// Core logic of the board.
     /// </summary>
     public class BoardManager : MonoBehaviour
     {
         private char[,] _board = new char[3, 3];
         [SerializeField] private UnityEvent<Move> onMoveMade;
+        [SerializeField] private UnityEvent onBoardReset;
         
         public char[,] GetBoardState() => _board;
         
@@ -28,6 +26,7 @@ namespace TicTacToe.Scripts
         
         public bool IsWinner(char player) {
             
+            // Check Row and Column
             for (int i = 0; i < 3; i++) {
                 
                 if ((_board[i, 0] == player && _board[i, 1] == player && _board[i, 2] == player) ||
@@ -55,32 +54,24 @@ namespace TicTacToe.Scripts
                     }
                 }
             }
-
             return true;
         }
-    }
 
-    public class Move {
-        public int X, Y;
-        public char Player;
-
-        public Move(int x, int y, char player) {
-            X = x;
-            Y = y;
-            Player = player;
-        }
-    }
-
-    public class Grid
-    {
-        public int X, Y;
-
-        public Grid(int x, int y)
+        public void ResetBoard()
         {
-            this.X = x;
-            this.Y = y;
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++)
+                {
+                    _board[i, j] = '\0';
+                }
+            }
+            onBoardReset.Invoke();
         }
     }
+
+    
+
+    
 
 
 }

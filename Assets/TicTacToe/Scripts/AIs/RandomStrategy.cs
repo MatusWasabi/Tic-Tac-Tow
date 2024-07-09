@@ -1,8 +1,13 @@
 using System.Collections.Generic;
+using TicTacToe.Scripts.Core;
 using UnityEngine;
+using Grid = TicTacToe.Scripts.Core.Grid;
 
-namespace TicTacToe.Scripts
+namespace TicTacToe.Scripts.AIs
 {
+    /// <summary>
+    /// Concrete strategy of AI
+    /// </summary>
     public class RandomStrategy : AIStrategy
     {
         public override void Execute(BoardManager boardManager, char symbol)
@@ -14,8 +19,5 @@ namespace TicTacToe.Scripts
             Grid grid = possibleGrids[randomIndex];
             boardManager.MakeMove(grid.X, grid.Y, symbol);
         }
-
-        
-        
     }
 }

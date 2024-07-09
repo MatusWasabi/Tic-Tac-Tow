@@ -1,12 +1,13 @@
+using TicTacToe.Scripts.Core;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace TicTacToe.Scripts
+namespace TicTacToe.Scripts.Player
 {
     public class HumanPlayer : MonoBehaviour, IPlayer {
         [FormerlySerializedAs("_symbol")] [SerializeField] private char symbol;
-        private int _x = 0;
-        private int _y = 0;
+        private int _col = 0;
+        private int _row = 0;
         
 
         public void MakeMove(BoardManager boardManager)
@@ -15,26 +16,22 @@ namespace TicTacToe.Scripts
             {
                 return;
             }
-            boardManager.MakeMove(_x, _y, symbol);
+            boardManager.MakeMove(_col, _row, symbol);
         }
 
         public char GetSymbol() {
             return symbol;
         }
+        
 
-        public bool IsTurn()
+        public void SetCol(int col)
         {
-            return true;
+            _col = col;
         }
 
-        public void SetX(int x)
+        public void SetRow(int row)
         {
-            _x = x;
-        }
-
-        public void SetY(int y)
-        {
-            _y = y;
+            _row = row;
         }
     }
 }

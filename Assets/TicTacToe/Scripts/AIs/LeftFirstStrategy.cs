@@ -1,13 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+using TicTacToe.Scripts.Core;
+using Grid = TicTacToe.Scripts.Core.Grid;
 
-namespace TicTacToe.Scripts
+namespace TicTacToe.Scripts.AIs
 {
+    /// <summary>
+    /// Concrete strategy of AI
+    /// </summary>
     public class LeftFirstStrategy : AIStrategy
     {
-        
-
         public override void Execute(BoardManager boardManager, char symbol)
         {
             char[,] boardState = boardManager.GetBoardState();
@@ -19,11 +21,8 @@ namespace TicTacToe.Scripts
 
         private Grid LeftFirstAlgorithm(List<Grid> possibleGrids)
         {
-            Grid leftMost;
             possibleGrids = possibleGrids.OrderBy(grid => grid.X).ToList();
-
-            leftMost = possibleGrids[0];
-            
+            Grid leftMost = possibleGrids[0];
             return leftMost;
         }
     }

@@ -65,9 +65,6 @@ namespace TicTacToe.Scripts.AIs
             return newBoard;
         }
 
-
-        
-
         private char FindOpponentSymbol(char[,] board, char playerSymbol)
         {
             char opponentSymbol = ' '; 

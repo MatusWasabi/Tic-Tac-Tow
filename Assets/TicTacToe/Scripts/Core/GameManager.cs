@@ -34,16 +34,19 @@ namespace TicTacToe.Scripts.Core
         {
             _currentPlayer.MakeMove(boardManager);
             
-            if (boardManager.IsWinner(_currentPlayer.GetSymbol()))
+            if (boardManager.IsWinner(_player1.GetSymbol()))
             {
-                onSomeoneWin.Invoke(_currentPlayer.GetSymbol().ToString());
+                onSomeoneWin.Invoke(_player1.GetSymbol().ToString());
                 return;
             }
-            
+            if(boardManager.IsWinner(_player2.GetSymbol()))
+            {
+                onSomeoneWin.Invoke(_player2.GetSymbol().ToString());
+                return;
+            }
             if (boardManager.IsStale())
             {
                 onNoWinner.Invoke();
-                return;
             }
         }
 

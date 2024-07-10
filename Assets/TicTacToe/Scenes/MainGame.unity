@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 68501129}
   - component: {fileID: 68501128}
   - component: {fileID: 68501131}
+  - component: {fileID: 68501132}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -468,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: 79
-  strategy: {fileID: 68501131}
+  strategy: {fileID: 68501132}
   thinkDelay: 0
   onAIStartThinking:
     m_PersistentCalls:
@@ -525,6 +526,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 816a14d7037e1d94a9b7db6e7d4ea593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &68501132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68501127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfc528f28f296e438c46fb46dd1f4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &132597597

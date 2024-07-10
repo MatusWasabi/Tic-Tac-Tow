@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2819994603823466331}
   - component: {fileID: 183279357404195683}
   - component: {fileID: 7901112002743669134}
+  - component: {fileID: 8389808149523556118}
   m_Layer: 5
   m_Name: GridSpace
   m_TagString: Untagged
@@ -136,6 +137,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 183279357404195683}
   buttonText: {fileID: 5761889957088473327}
+--- !u!114 &8389808149523556118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5570460477594798680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 0
 --- !u!1 &8267644369596416915
 GameObject:
   m_ObjectHideFlags: 0

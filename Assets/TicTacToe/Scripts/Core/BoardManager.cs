@@ -9,7 +9,8 @@ namespace TicTacToe.Scripts.Core
     /// </summary>
     public class BoardManager : MonoBehaviour
     {
-        private char[,] _board = new char[3, 3];
+        private static int _boardSize = 3;
+        private char[,] _board = new char[_boardSize, _boardSize];
         [SerializeField] private UnityEvent<Move> onMoveMade;
         [SerializeField] private UnityEvent onBoardReset;
         
@@ -27,7 +28,7 @@ namespace TicTacToe.Scripts.Core
         public bool IsWinner(char player) {
             
             // Check Row and Column
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < _boardSize; i++) {
                 
                 if ((_board[i, 0] == player && _board[i, 1] == player && _board[i, 2] == player) ||
                     (_board[0, i] == player && _board[1, i] == player && _board[2, i] == player)) {
@@ -45,8 +46,8 @@ namespace TicTacToe.Scripts.Core
 
         public bool IsStale()
         {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++)
+            for (int i = 0; i < _boardSize; i++) {
+                for (int j = 0; j < _boardSize; j++)
                 {
                     if (_board[i, j] == '\0')
                     {
@@ -59,8 +60,8 @@ namespace TicTacToe.Scripts.Core
 
         public void ResetBoard()
         {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++)
+            for (int i = 0; i < _boardSize; i++) {
+                for (int j = 0; j < _boardSize; j++)
                 {
                     _board[i, j] = '\0';
                 }
